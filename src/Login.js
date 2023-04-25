@@ -1,19 +1,5 @@
 import React from "react";
-import * as ReactBootstrap from "react-bootstrap";
-import axios from "axios";
-import {
-    Card,
-    Accordion,
-    Button,
-    Container,
-    Row,
-    Col,
-    Image,
-    list,
-    ListGroupItem,
-    Input
-  } from "react-bootstrap";
-  
+import { Card } from "react-bootstrap";
 import { UserContext } from "./context";
 
 export function Login() {
@@ -23,7 +9,7 @@ export function Login() {
   const [name, setName]         = React.useState('');
   const [password, setPassword] = React.useState('');
   const ctx = React.useContext(UserContext);
-
+  
   function validateUserCrid(field, label) {
     if (!field) {
       setStatus('Error: ' + label);
@@ -51,21 +37,21 @@ export function Login() {
       setTimeout(() => setStatus(''), 2000);
     }
   }
-
+  
   function clearForm() {
     setName('');
     setEmail('');
     setPassword('');
     setShow('true');
   }
-
+  
   return (
     <Card
-      bgcolor="dark"
-      header="Log In"
-      status={status}
-      body={show ? (
-        <>
+    bgcolor="dark"
+    header="Log In"
+    status={status}
+    body={show ? (
+      <>
           Email address<br />
           <input type="input" className="form-control" id="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br />
           Password<br />
@@ -78,7 +64,7 @@ export function Login() {
           <button type="submit" className="btn btn-light" onClick={clearForm}>Login</button>
         </>
       )}
-    />
-  );
-}
+      />
+      );
+    }
 export default Login;

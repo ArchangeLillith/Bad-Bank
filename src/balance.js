@@ -3,7 +3,7 @@ import { Card, Accordion, Button, Container, Row, Col, Image, ListGroup, ListGro
 import axios from "axios";
 import { UserContext } from "./context";
 
-function Balance() {
+export function Balance() {
   const { user } = useContext(UserContext);
 
   return (
